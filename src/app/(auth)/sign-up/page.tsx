@@ -1,10 +1,11 @@
 import Logo from "@/components/logo";
 import { NotebookPen } from "lucide-react";
 import Link from "next/link";
-import LoginForm from "./form";
+import React from "react";
+import SignUpForm from "./form";
 import { Button } from "@/components/ui/button";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   return (
     <div className="flex flex-col justify-center min-h-screen w-1/2 mx-auto">
       <h1>
@@ -17,15 +18,15 @@ const LoginPage = () => {
         </Link>
       </h1>
 
-      <LoginForm />
+      <SignUpForm />
       <p className="mt-5">
-        Don&apos;t have an account ?
+        Already have an account ?
         <Button asChild variant="link" className="text-primary/80">
-          <Link href="/sign-up">SIGN UP</Link>
+          <Link href="/login">LOGIN</Link>
         </Button>
       </p>
     </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;

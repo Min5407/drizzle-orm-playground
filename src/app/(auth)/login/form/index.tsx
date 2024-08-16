@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormEvent, useState } from "react";
 import { Loader2 } from "lucide-react";
-import loginAction from "./action";
+import { loginAction } from "@/actions/auth";
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,13 +29,24 @@ const LoginForm = () => {
     <form className="mt-10 grid gap-7" onSubmit={handleLogin}>
       <div className="grid gap-4">
         <Label htmlFor="email">Email Address</Label>
-        <Input className="border-white" name="email" id="email" />
+        <Input
+          className="border-white"
+          name="email"
+          id="email"
+          placeholder="email"
+        />
       </div>
       <div className="grid gap-4">
         <Label htmlFor="password">Password</Label>
-        <Input className="border-white" name="password" id="password" />
+        <Input
+          className="border-white"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
       </div>
-      <Button>
+      <Button disabled={isLoading}>
         {isLoading ? (
           <Loader2 className="mr-2 animate-spin" size={20} />
         ) : (
